@@ -1,7 +1,7 @@
 {
 	"name": "grunt-checkrepo",
 	"description": "Check the state of repository.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"homepage": "https://github.com/darsain/grunt-checkrepo",
 	"author": {
 		"name": "Darsain",
@@ -28,15 +28,15 @@
 		"test": "grunt test"
 	},
 	"dependencies": {
-		"shelljs": "~0.2.5",
-		"semver": "~2.1.0"
+		"semver": "~5.7.1",
+		"shelljs": "~0.2.5"
 	},
 	"devDependencies": {
-		"grunt-contrib-jshint": "~0.6.4",
-		"grunt": "~0.4.1"
+		"grunt": "~1.0.4",
+		"grunt-contrib-jshint": "~2.1.0"
 	},
 	"peerDependencies": {
-		"grunt": "~0.4.1"
+		"grunt": "~1.0.4"
 	},
 	"keywords": [
 		"gruntplugin"
