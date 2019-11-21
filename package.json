@@ -1,44 +1,44 @@
 {
-	"name": "grunt-checkrepo",
-	"description": "Check the state of repository.",
-	"version": "0.1.1",
-	"homepage": "https://github.com/darsain/grunt-checkrepo",
-	"author": {
-		"name": "Darsain",
-		"url": "http://darsa.in"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/darsain/grunt-checkrepo.git"
-	},
-	"bugs": {
-		"url": "https://github.com/darsain/grunt-checkrepo/issues"
-	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/MIT"
-		}
-	],
-	"main": "Gruntfile.js",
-	"engines": {
-		"node": ">=0.8.0"
-	},
-	"scripts": {
-		"test": "grunt test"
-	},
-	"dependencies": {
-		"semver": "~5.7.1",
-		"shelljs": "~0.2.5"
-	},
-	"devDependencies": {
-		"grunt": "~1.0.4",
-		"grunt-contrib-jshint": "~2.1.0"
-	},
-	"peerDependencies": {
-		"grunt": "~1.0.4"
-	},
-	"keywords": [
-		"gruntplugin"
-	]
+  "name": "@ndigitals/grunt-checkrepo",
+  "description": "Check the state of repository.",
+  "version": "0.1.1",
+  "homepage": "https://github.com/ndigitals/grunt-checkrepo",
+  "author": "Darsain (http://darsa.in)",
+  "contributors": [
+    "Tim Nolte <tim.nolte@ndigitals.com> (https://www.ndigitals.com)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ndigitals/grunt-checkrepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndigitals/grunt-checkrepo/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "semver": "~5.7.1",
+    "shelljs": "~0.2.5"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.4",
+    "grunt-contrib-jshint": "~2.1.0"
+  },
+  "peerDependencies": {
+    "grunt": "~1.0.4"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
 }
