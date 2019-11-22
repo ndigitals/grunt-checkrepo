@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/ndigitals/grunt-checkrepo.svg?branch=master)](https://travis-ci.org/ndigitals/grunt-checkrepo)
 [![dependencies Status](https://david-dm.org/ndigitals/grunt-checkrepo/status.svg)](https://david-dm.org/ndigitals/grunt-checkrepo)
 [![devDependencies Status](https://david-dm.org/ndigitals/grunt-checkrepo/dev-status.svg)](https://david-dm.org/ndigitals/grunt-checkrepo?type=dev)
-[![NPM Downloads](https://img.shields.io/npm/dm/grunt-checkrepo.svg)](https://www.npmjs.org/package/grunt-checkrepo)
+[![NPM Downloads](https://img.shields.io/npm/dm/@ndigitals/grunt-checkrepo)](https://www.npmjs.com/package/@ndigitals/grunt-checkrepo)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
 # grunt-checkrepo
