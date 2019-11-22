@@ -1,20 +1,26 @@
+[![NPM version](https://badge.fury.io/js/%40ndigitals%2Fgrunt-checkrepo.svg)](https://badge.fury.io/js/%40ndigitals%2Fgrunt-checkrepo)
+[![Build Status](https://travis-ci.org/ndigitals/grunt-checkrepo.svg?branch=master)](https://travis-ci.org/ndigitals/grunt-checkrepo)
+[![dependencies Status](https://david-dm.org/ndigitals/grunt-checkrepo/status.svg)](https://david-dm.org/ndigitals/grunt-checkrepo)
+[![devDependencies Status](https://david-dm.org/ndigitals/grunt-checkrepo/dev-status.svg)](https://david-dm.org/ndigitals/grunt-checkrepo?type=dev)
+[![NPM Downloads](https://img.shields.io/npm/dm/grunt-checkrepo.svg)](https://www.npmjs.org/package/grunt-checkrepo)
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
 # grunt-checkrepo
 
 Check the state of repository.
 
-Task will cancel grunt tasks queue when repository state doesn't comply with your requirements. You can look at it as
-a simple repository linting.
+> This is an updated fork of the [original Grunt module](https://www.npmjs.com/package/grunt-checkrepo).
 
-This is a [Grunt](http://gruntjs.com/) 0.4 plugin. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to
-check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a
-[Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
+Task will cancel grunt tasks queue when repository state doesn't comply with your requirements. You can look at it as a simple repository linting.
+
+This is a [Grunt](http://gruntjs.com/) 1.0 plugin. If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins.
 
 ## Installation
 
 Use npm to install and save the plugin into `devDependencies`.
 
 ```shell
-npm install grunt-checkrepo --save-dev
+npm install @ndigitals/grunt-checkrepo --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
@@ -25,8 +31,7 @@ grunt.loadNpmTasks('grunt-checkrepo');
 
 ## Configuration
 
-In your project's Gruntfile, add a section named `checkrepo` to the data object passed into `grunt.initConfig()`. This
-is a multitask task and accepts multiple targets.
+In your project's Gruntfile, add a section named `checkrepo` to the data object passed into `grunt.initConfig()`. This is a multitask task and accepts multiple targets.
 
 ```js
 grunt.initConfig({
@@ -48,8 +53,7 @@ There are no default options. Each target property is a check that will be run, 
 #### tag
 Type: `Object`
 
-Will run [`semver`](https://github.com/isaacs/node-semver) functions & comparisons against passed version and highest
-repo tag. Each object property name is a `semver` method, and property value is one argument being passed to it.
+Will run [`semver`](https://github.com/isaacs/node-semver) functions & comparisons against passed version and highest repo tag. Each object property name is a `semver` method, and property value is one argument being passed to it.
 
 Example:
 
