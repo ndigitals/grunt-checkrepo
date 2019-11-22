@@ -1,7 +1,16 @@
 language: node_js
+
 node_js:
   - "node"
   - "11"
   - "10"
   - "8"
-before_install: npm install -g grunt-cli
+
+before_install: 
+  - npm install -g grunt-cli
+
+before_script:
+  # Delete the last tag to pass testing checks, as designed.
+  #- bash git tag -l | tail -n 1 | xargs git tag -d
+  # Create and stage a test file.
+  - bash touch test.txt && git add test.txt
