@@ -24,7 +24,7 @@ node_js:
   - "10"
   - "8"
 
-jobs:
+matrix:
   include:
     - stage: test
       before_install: 
@@ -36,6 +36,9 @@ jobs:
       after_script:
         # Clean up test files.
         - git reset HEAD test.txt && rm -f test.txt
+
+jobs:
+  include:
     - stage: deploy
       name: "NPM Deployment"
       node_js: "node"
