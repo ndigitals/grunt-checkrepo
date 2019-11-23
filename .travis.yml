@@ -18,13 +18,6 @@ branches:
     - /^feature\/.*$/
     - /^fix\/.*$/
 
-# Specify which versions of NodeJS to test under.
-node_js:
-  - "node"
-  - "11"
-  - "10"
-  - "8"
-
 before_install: 
   - npm install -g grunt-cli
 
@@ -32,6 +25,11 @@ jobs:
   include:
     - stage: test
       name: "Test Module"
+      node_js:
+        - "node"
+        - "11"
+        - "10"
+        - "8"
       before_script:
         # Delete the last tag to pass testing checks, as designed.
         #- git describe --abbrev=0 --tags | xargs git tag -d
