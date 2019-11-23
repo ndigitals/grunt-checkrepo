@@ -41,6 +41,8 @@ jobs:
   include:
     - stage: deploy
       name: "NPM Deployment"
+      on:
+        branch: master
       node_js: "node"
       before_install: skip
       before_script: skip
@@ -51,10 +53,10 @@ jobs:
         email: "tim.nolte@ndigitals.com"
         api_key: $NPM_API_KEY
         gem: grunt-checkrepo
-        on:
-          branch: master
     - stage: release
       name: "GitHub Release"
+      on:
+        branch: master
       node_js: "node"
       before_install: skip
       before_script: skip
@@ -72,5 +74,3 @@ jobs:
         provider: releases
         api_key: $GITHUB_OAUTH_TOKEN
         skip_cleanup: true
-        on:
-          branch: master
