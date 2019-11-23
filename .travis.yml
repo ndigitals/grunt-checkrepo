@@ -21,24 +21,26 @@ branches:
 before_install: 
   - npm install -g grunt-cli
 
+node_js:
+  - "node"
+  - "11"
+  - "10"
+  - "8"
+
+before_script:
+  # Delete the last tag to pass testing checks, as designed.
+  #- git describe --abbrev=0 --tags | xargs git tag -d
+  # Create and stage a test file.
+  - npm --version > test.txt && git add test.txt
+
+script: npm run test
+
+after_script:
+  # Clean up test files.
+  - git reset HEAD test.txt && rm -f test.txt
+
 jobs:
   include:
-    - stage: test
-      name: "Test Module"
-      node_js:
-        - "node"
-        - "11"
-        - "10"
-        - "8"
-      before_script:
-        # Delete the last tag to pass testing checks, as designed.
-        #- git describe --abbrev=0 --tags | xargs git tag -d
-        # Create and stage a test file.
-        - npm --version > test.txt && git add test.txt
-      script: npm run test
-      after_script:
-        # Clean up test files.
-        - git reset HEAD test.txt && rm -f test.txt
     - stage: deploy
       name: "NPM Deployment"
       node_js: "node"
