@@ -18,29 +18,34 @@ branches:
     - /^feature\/.*$/
     - /^fix\/.*$/
 
-matrix:
-  include:
-    - stage: test
-      node_js:
-        - "node"
-        - "11"
-        - "10"
-        - "8"
-      before_install: 
-        - npm install -g grunt-cli
-      before_script:
-        # Create and stage a test file.
-        - grunt --version > test.txt && git add test.txt
-      script: grunt test
-      after_script:
-        # Clean up test files.
-        - git reset HEAD test.txt && rm -f test.txt
+node_js:
+  - "node"
+  - "11"
+  - "10"
+  - "8"
+
+before_install: 
+  - npm install -g grunt-cli
+
+before_script:
+  # Create and stage a test file.
+  - grunt --version > test.txt && git add test.txt
+
+script: grunt test
+
+after_script:
+  # Clean up test files.
+  - git reset HEAD test.txt && rm -f test.txt
 
 jobs:
   include:
     - stage: deploy
       name: "NPM Deployment"
       node_js: "node"
+      before_install: skip
+      before_script: skip
+      script: skip
+      after_script: skip
       deploy:
         provider: npm
         email: "tim.nolte@ndigitals.com"
@@ -51,6 +56,10 @@ jobs:
     - stage: release
       name: "GitHub Release"
       node_js: "node"
+      before_install: skip
+      before_script: skip
+      script: skip
+      after_script: skip
       before_deploy:
         # Set up git user name and tag this commit
         - git config --local user.name "Tim Nolte"
