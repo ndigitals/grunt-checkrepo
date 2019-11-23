@@ -18,14 +18,15 @@ branches:
     - /^feature\/.*$/
     - /^fix\/.*$/
 
+node_js:
+  - "node"
+  - "11"
+  - "10"
+  - "8"
+
 jobs:
   include:
     - stage: test
-      node_js:
-        - "node"
-        - "11"
-        - "10"
-        - "8"
       before_install: 
         - npm install -g grunt-cli
       before_script:
