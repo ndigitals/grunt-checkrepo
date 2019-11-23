@@ -18,22 +18,20 @@ branches:
     - /^feature\/.*$/
     - /^fix\/.*$/
 
-before_install: 
-  - npm install -g grunt-cli
-
-node_js:
-  - "node"
-  - "11"
-  - "10"
-  - "8"
-
 jobs:
   include:
-    - node_js: "*"
+    - stage: test
+      node_js:
+        - "node"
+        - "11"
+        - "10"
+        - "8"
+      before_install: 
+        - npm install -g grunt-cli
       before_script:
         # Create and stage a test file.
-        - npm --version > test.txt && git add test.txt
-      script: npm run test
+        - grunt --version > test.txt && git add test.txt
+      script: grunt test
       after_script:
         # Clean up test files.
         - git reset HEAD test.txt && rm -f test.txt
