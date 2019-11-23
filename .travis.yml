@@ -24,7 +24,7 @@ node_js:
   - "10"
   - "8"
 
-before_install: 
+before_install:
   - npm install -g grunt-cli
 
 before_script:
