@@ -71,10 +71,10 @@ jobs:
         - export GIT_TAG_VERSION=$(npm view ./ version)
         - git tag "v$GIT_TAG_VERSION"
       deploy:
-        condition: -z $(git tag --points-at $TRAVIS_COMMIT)
         provider: releases
         edge: true
         api_key: "$GITHUB_OAUTH_TOKEN"
         skip_cleanup: true
         on:
+          condition: -z $(git tag --points-at $TRAVIS_COMMIT)
           branch: master
