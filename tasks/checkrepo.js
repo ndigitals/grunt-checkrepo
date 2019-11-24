@@ -18,7 +18,7 @@ var semver = require('semver');
  * @return {Object}
  */
 function exec(command) {
-	return shell.exec(command, { silent: true });
+  return shell.exec(command, { silent: true });
 }
 
 /**
@@ -35,7 +35,7 @@ var git = {
 			return highestTag;
 		}
 
-		tags = tags.output.split('\n');
+		tags = tags.stdout.split('\n');
 		tags.forEach(function (tag) {
 			tag = semver.valid(tag);
 			if (tag && (!highestTag || semver.gt(tag, highestTag))) {
@@ -49,7 +49,7 @@ var git = {
 		return exec('git diff-index --quiet HEAD --').code === 0;
 	},
 	isTagged: function () {
-		return !!exec('git tag --points-at HEAD').output.split('\n').filter(function (line) { return !!line; }).length;
+		return !!exec('git tag --points-at HEAD').stdout.split('\n').filter(function (line) { return !!line; }).length;
 	}
 };
 

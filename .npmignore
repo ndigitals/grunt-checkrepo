@@ -1,2 +1,8 @@
 node_modules/
+tmp
+doc
+docs
+.travis.yml
+.git
+.gitignore
 Gruntfile.js
