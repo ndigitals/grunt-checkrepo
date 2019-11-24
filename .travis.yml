@@ -43,8 +43,6 @@ after_script:
 
 jobs:
   include:
-    - # require the branch name to be master (note for PRs this is the base branch name)
-      if: branch = master
     - stage: deploy
       name: "NPM Deployment"
       node_js: "node"
@@ -57,7 +55,6 @@ jobs:
         edge: true
         email: "$NPM_EMAIL"
         api_key: "$NPM_API_KEY"
-        gem: grunt-checkrepo
         on:
           branch: master
     - stage: release
