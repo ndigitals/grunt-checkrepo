@@ -54,8 +54,8 @@ jobs:
       after_script: skip
       deploy:
         provider: npm
-        email: "tim.nolte@ndigitals.com"
-        api_key: $NPM_API_KEY
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_API_KEY"
         gem: grunt-checkrepo
         on:
           branch: master
@@ -69,14 +69,14 @@ jobs:
       before_deploy:
         # Set up git user name and tag this commit
         - git config --local user.name "Tim Nolte"
-        - git config --local user.email "tim.nolte@ndigitals.com"
+        - git config --local user.email "$GITHUB_USER_EMAIL"
         - export LAST_GIT_TAG_VERSION=$(git describe --abbrev=0 --tags) && export LAST_GIT_TAG_VERSION=${LAST_GIT_TAG_VERSION:1}
         - export GIT_TAG_VERSION=$((LAST_GIT_TAG_VERSION+1))
         - git tag $GIT_TAG_VERSION
       deploy:
         condition: -z $(git tag --points-at $TRAVIS_COMMIT)
         provider: releases
-        api_key: $GITHUB_OAUTH_TOKEN
+        api_key: "$GITHUB_OAUTH_TOKEN"
         skip_cleanup: true
         on:
           branch: master
