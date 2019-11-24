@@ -24,6 +24,10 @@ node_js:
   - "10"
   - "8"
 
+cache:
+  directories:
+    - node_modules
+
 before_install:
   - npm install -g grunt-cli
 
@@ -70,10 +74,12 @@ jobs:
         - git config --local user.email "$GITHUB_USER_EMAIL"
         - export GIT_TAG_VERSION=$(npm view ./ version)
         - git tag "v$GIT_TAG_VERSION"
+        - npm pack
       deploy:
         provider: releases
         edge: true
         api_key: "$GITHUB_OAUTH_TOKEN"
+        file: ndigitals-${REPO}-${GIT_TAG_VERSION}.tgz
         skip_cleanup: true
         on:
           condition: -z $(git tag --points-at $TRAVIS_COMMIT)
