@@ -31,7 +31,11 @@ before_script:
   # Create and stage a test file.
   - grunt --version > test.txt && git add test.txt
 
-script: grunt test
+script:
+  # Perform linting
+  - grunt jshint
+  # Perform testing
+  - grunt test
 
 after_script:
   # Clean up test files.
