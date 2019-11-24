@@ -54,6 +54,7 @@ jobs:
       after_script: skip
       deploy:
         provider: npm
+        edge: true
         email: "$NPM_EMAIL"
         api_key: "$NPM_API_KEY"
         gem: grunt-checkrepo
@@ -76,6 +77,7 @@ jobs:
       deploy:
         condition: -z $(git tag --points-at $TRAVIS_COMMIT)
         provider: releases
+        edge: true
         api_key: "$GITHUB_OAUTH_TOKEN"
         skip_cleanup: true
         on:
