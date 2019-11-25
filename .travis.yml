@@ -75,11 +75,15 @@ jobs:
         - export GIT_TAG_VERSION=$(npm view ./ version)
         - git tag "v$GIT_TAG_VERSION"
         - npm pack
+        - export RELEASE_PKG_FILE=$(ls *.tgz)
+        - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
       deploy:
         provider: releases
         edge: true
         api_key: "$GITHUB_OAUTH_TOKEN"
-        file: ndigitals-${REPO}-${GIT_TAG_VERSION}.tgz
+        file_glob: true
+        file:
+          - "${RELEASE_PKG_FILE}"
         skip_cleanup: true
         on:
           condition: -z $(git tag --points-at $TRAVIS_COMMIT)
