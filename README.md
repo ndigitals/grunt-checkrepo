@@ -1,5 +1,5 @@
 [![NPM version](https://badge.fury.io/js/%40ndigitals%2Fgrunt-checkrepo.svg)](https://badge.fury.io/js/%40ndigitals%2Fgrunt-checkrepo)
-[![Build Status](https://travis-ci.org/ndigitals/grunt-checkrepo.svg?branch=master)](https://travis-ci.org/ndigitals/grunt-checkrepo)
+[![Build Status](https://travis-ci.com/ndigitals/grunt-checkrepo.svg?branch=master)](https://travis-ci.com/ndigitals/grunt-checkrepo)
 [![dependencies Status](https://david-dm.org/ndigitals/grunt-checkrepo/status.svg)](https://david-dm.org/ndigitals/grunt-checkrepo)
 [![devDependencies Status](https://david-dm.org/ndigitals/grunt-checkrepo/dev-status.svg)](https://david-dm.org/ndigitals/grunt-checkrepo?type=dev)
 [![NPM Downloads](https://img.shields.io/npm/dm/@ndigitals/grunt-checkrepo)](https://www.npmjs.com/package/@ndigitals/grunt-checkrepo)

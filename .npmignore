@@ -1,8 +1,10 @@
-node_modules/
+.git
+node_modules
 tmp
 doc
 docs
-.travis.yml
-.git
+.editorconfig
 .gitignore
+.jshintrc
+.travis.yml
 Gruntfile.js
