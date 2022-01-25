@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -47,12 +49,14 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Setup Node Environment
         uses: actions/setup-node@v2
         # https://github.com/marketplace/actions/setup-node-js-environment
         with:
-          node-version: 12.x
+          node-version: ${{ env.DEFAULT_NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
 
       - name: Cache node_modules
