@@ -1,7 +1,7 @@
 {
   "name": "@ndigitals/grunt-checkrepo",
   "description": "Check the state of repository.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "homepage": "https://github.com/ndigitals/grunt-checkrepo",
   "author": "Darsain (http://darsa.in)",
   "contributors": [
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/ndigitals/grunt-checkrepo.git"
+    "url": "git@github.com:ndigitals/grunt-checkrepo.git"
   },
   "bugs": {
     "url": "https://github.com/ndigitals/grunt-checkrepo/issues"
@@ -27,7 +27,8 @@
     "node": ">=0.8.0"
   },
   "scripts": {
-    "lint": "grunt jshint",
+    "analyze": "grunt jshint",
+    "lint": "editorconfig-checker",
     "test": "grunt test"
   },
   "dependencies": {
@@ -35,6 +36,7 @@
     "shelljs": "~0.8.0"
   },
   "devDependencies": {
+    "editorconfig-checker": "^4.0.2",
     "grunt": "~1.0.4",
     "grunt-contrib-jshint": "~2.1.0"
   },
@@ -43,5 +45,10 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
 }
