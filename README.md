@@ -1,11 +1,11 @@
+# grunt-checkrepo
+
 [![NPM version](https://badge.fury.io/js/%40ndigitals%2Fgrunt-checkrepo.svg)](https://badge.fury.io/js/%40ndigitals%2Fgrunt-checkrepo)
 [![Build Status](https://travis-ci.com/ndigitals/grunt-checkrepo.svg?branch=master)](https://travis-ci.com/ndigitals/grunt-checkrepo)
 [![dependencies Status](https://david-dm.org/ndigitals/grunt-checkrepo/status.svg)](https://david-dm.org/ndigitals/grunt-checkrepo)
 [![devDependencies Status](https://david-dm.org/ndigitals/grunt-checkrepo/dev-status.svg)](https://david-dm.org/ndigitals/grunt-checkrepo?type=dev)
 [![NPM Downloads](https://img.shields.io/npm/dm/@ndigitals/grunt-checkrepo)](https://www.npmjs.com/package/@ndigitals/grunt-checkrepo)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-
-# grunt-checkrepo
 
 Check the state of repository.
 
@@ -26,7 +26,7 @@ npm install @ndigitals/grunt-checkrepo --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-checkrepo');
+grunt.loadNpmTasks("grunt-checkrepo");
 ```
 
 ## Configuration
@@ -35,14 +35,14 @@ In your project's Gruntfile, add a section named `checkrepo` to the data object 
 
 ```js
 grunt.initConfig({
-	checkrepo: {
-		foo: {
-			// Foo target options
-		},
-		bar: {
-			// Bar target options
-		},
-	},
+  checkrepo: {
+    foo: {
+      // Foo target options
+    },
+    bar: {
+      // Bar target options
+    },
+  },
 });
 ```
 
@@ -51,6 +51,7 @@ There are no default options. Each target property is a check that will be run, 
 ## Available checks
 
 #### tag
+
 Type: `Object`
 
 Will run [`semver`](https://github.com/isaacs/node-semver) functions & comparisons against passed version and highest repo tag. Each object property name is a `semver` method, and property value is one argument being passed to it.
@@ -59,15 +60,15 @@ Example:
 
 ```js
 grunt.initConfig({
-	pkg: grunt.file.readJSON('package.json'),
-	checkrepo: {
-		foo: {
-			tag: {
-				valid: '<%= pkg.version %>', // Check if pkg.version is valid semantic version
-				lt: '<%= pkg.version %>',    // Check if highest repo tag is lower than pkg.version
-			},
-		}
-	},
+  pkg: grunt.file.readJSON("package.json"),
+  checkrepo: {
+    foo: {
+      tag: {
+        valid: "<%= pkg.version %>", // Check if pkg.version is valid semantic version
+        lt: "<%= pkg.version %>", // Check if highest repo tag is lower than pkg.version
+      },
+    },
+  },
 });
 ```
 
@@ -76,6 +77,7 @@ Available methods:
 `valid`, `gt`, `gte`, `lt`, `lte`, `eq`, `neq`
 
 #### tagged
+
 Type: `Boolean`
 
 Checks whether the last commit (HEAD) is or is not already tagged.
@@ -84,16 +86,17 @@ Example:
 
 ```js
 checkrepo: {
-	foo: {
-		tagged: true, // Require last commit (HEAD) to be tagged
-	},
-	bar: {
-		tagged: false, // Require last commit (head) to not be tagged
-	}
+  foo: {
+    tagged: true, // Require last commit (HEAD) to be tagged
+  },
+  bar: {
+    tagged: false, // Require last commit (head) to not be tagged
+  }
 }
 ```
 
 #### clean
+
 Type: `Boolean`
 
 Check whether the repository is clean - has no unstaged changes.
@@ -102,12 +105,12 @@ Example:
 
 ```js
 checkrepo: {
-	foo: {
-		clean: true, // Require repo to be clean (no unstaged changes)
-	},
-	bar: {
-		clean: false, // Require repo to be dirty (have unstaged changes)
-	}
+  foo: {
+    clean: true, // Require repo to be clean (no unstaged changes)
+  },
+  bar: {
+    clean: false, // Require repo to be dirty (have unstaged changes)
+  }
 }
 ```
 
@@ -117,21 +120,21 @@ Task with all available options:
 
 ```js
 grunt.initConfig({
-	pkg: grunt.file.readJSON('package.json'),
-	checkrepo: {
-		foo: {
-			tag: {
-				valid: '<%= pkg.version %>', // Check if pkg.version is valid semantic version
-				gt: '<%= pkg.version %>',    // Check if highest repo tag is greater than pkg.version
-				gte: '<%= pkg.version %>',   // Check if highest repo tag is greater or equal to pkg.version
-				lt: '<%= pkg.version %>',    // Check if highest repo tag is lower than pkg.version
-				lte: '<%= pkg.version %>',   // Check if highest repo tag is lower or equal than pkg.version
-				eq: '<%= pkg.version %>',    // Check if highest repo tag is equal to pkg.version
-				neq: '<%= pkg.version %>',   // Check if highest repo tag is not equal to pkg.version
-			},
-			tagged: false, // Check if last repo commit (HEAD) is not tagged
-			clean: true,   // Check if the repo working directory is clean
-		}
-	},
+  pkg: grunt.file.readJSON("package.json"),
+  checkrepo: {
+    foo: {
+      tag: {
+        valid: "<%= pkg.version %>", // Check if pkg.version is valid semantic version
+        gt: "<%= pkg.version %>", // Check if highest repo tag is greater than pkg.version
+        gte: "<%= pkg.version %>", // Check if highest repo tag is greater or equal to pkg.version
+        lt: "<%= pkg.version %>", // Check if highest repo tag is lower than pkg.version
+        lte: "<%= pkg.version %>", // Check if highest repo tag is lower or equal than pkg.version
+        eq: "<%= pkg.version %>", // Check if highest repo tag is equal to pkg.version
+        neq: "<%= pkg.version %>", // Check if highest repo tag is not equal to pkg.version
+      },
+      tagged: false, // Check if last repo commit (HEAD) is not tagged
+      clean: true, // Check if the repo working directory is clean
+    },
+  },
 });
 ```
