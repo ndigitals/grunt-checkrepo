@@ -17,7 +17,6 @@
 	"unused": true,
 	"strict": true,
 	"trailing": true,
-
 	"asi": false,
 	"boss": false,
 	"debug": false,
@@ -41,6 +40,5 @@
 	"shadow": false,
 	"sub": false,
 	"supernew": false,
-
 	"node": true
 }
