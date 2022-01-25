@@ -29,11 +29,13 @@
   "scripts": {
     "analyze": "grunt jshint",
     "lint": "editorconfig-checker",
-    "test": "grunt test"
+    "pretest": "grunt --version > test.txt && git add test.txt",
+    "test": "grunt test",
+    "posttest": "git reset HEAD test.txt && rm -f test.txt"
   },
   "dependencies": {
     "semver": "~6.3.0",
-    "shelljs": "~0.8.0"
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "editorconfig-checker": "^4.0.2",
