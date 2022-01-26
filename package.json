@@ -47,10 +47,5 @@
   },
   "keywords": [
     "gruntplugin"
-  ],
-  "release": {
-    "branches": [
-      "main"
-    ]
-  }
+  ]
 }

@@ -1,10 +1,13 @@
 .git
+.github
 node_modules
 tmp
 doc
 docs
 .editorconfig
+.eslintignore
 .gitignore
 .jshintrc
+.npmrc
 .travis.yml
 Gruntfile.js
