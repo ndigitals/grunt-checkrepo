@@ -3,7 +3,7 @@
 [![NPM version](https://badge.fury.io/js/%40ndigitals%2Fgrunt-checkrepo.svg)](https://badge.fury.io/js/%40ndigitals%2Fgrunt-checkrepo)
 [![Build Status](https://github.com/ndigitals/grunt-checkrepo/actions/workflows/release.yml/badge.svg)](https://github.com/ndigitals/grunt-checkrepo/actions/workflows/release.yml)
 [![NPM Downloads](https://img.shields.io/npm/dm/@ndigitals/grunt-checkrepo)](https://www.npmjs.com/package/@ndigitals/grunt-checkrepo)
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+[![MIT License](https://img.shields.io/npm/l/@ndigitals/grunt-checkrepo)](https://github.com/ndigitals/grunt-checkrepo/blob/develop/LICENSE)
 
 Check the state of repository.
 
